@@ -86,6 +86,7 @@ class _BasqetWebviewState extends State<BasqetWebview> {
               setState(() {});
             },
             gestureNavigationEnabled: true,
+            navigationDelegate: _handleNavigationInterceptor,
           ),
         ),
         Visibility(
