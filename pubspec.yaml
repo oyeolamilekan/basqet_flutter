@@ -1,6 +1,6 @@
 name: flutter_basqet
 description: Official plugin for using Basqet SDK with flutter https://basqet.com/.
-version: 1.0.0
+version: 1.0.1
 homepage: https://github.com/oyeolamilekan/basqet_flutter
 
 environment:

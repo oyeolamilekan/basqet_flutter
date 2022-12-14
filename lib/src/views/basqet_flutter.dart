@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 
 import 'basqet.dart';
 
@@ -30,6 +29,9 @@ class BasqetFlutter {
 
     /// Triggered on Connect Widget close
     required Function onClose,
+
+    /// Triggered on Abandoned Widget close
+    Function? onAbandoned,
     bool showLogs = false,
     String? reference,
   }) async =>
@@ -49,6 +51,7 @@ class BasqetFlutter {
                 email: email,
                 onSuccess: onSuccess,
                 onError: onError,
+                onAbandoned: onAbandoned ?? () {},
                 onClose: () {
                   onClose();
                   Navigator.of(context).pop();

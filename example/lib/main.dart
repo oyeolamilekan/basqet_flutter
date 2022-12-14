@@ -46,6 +46,9 @@ class TestBasqet extends StatelessWidget {
                   onClose: () {
                     print("modal closed");
                   },
+                  onAbandoned: () {
+                    print("checkout Abandoned");
+                  },
                   onSuccess: (code) {
                     print(code);
                     Navigator.of(context).pop();

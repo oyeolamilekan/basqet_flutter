@@ -39,6 +39,7 @@ String buildBasqetHtml(
             onSuccess: (ref) => sendMessage({"event": "checkout.success", "transaction_reference": ref}),
             onError: (error) => sendMessage({"event": "checkout.error", "data": error}),
             onClose: () => sendMessage({"event": "checkout.closed"}),
+            onAbandoned: () => sendMessage({"event": "checkout.abandoned"}),
           });
 
           function sendMessage(message) {

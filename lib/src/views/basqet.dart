@@ -18,6 +18,7 @@ class BasqetWebview extends StatefulWidget {
   final String description;
   final String currency;
   final Function onClose;
+  final Function onAbandoned;
   final Function(dynamic payload) onError;
   final Function(dynamic payload) onSuccess;
 
@@ -31,6 +32,7 @@ class BasqetWebview extends StatefulWidget {
     required this.onClose,
     required this.onError,
     required this.onSuccess,
+    required this.onAbandoned,
   }) : super(key: key);
 
   @override
@@ -84,6 +86,7 @@ class _BasqetWebviewState extends State<BasqetWebview> {
               setState(() {});
             },
             gestureNavigationEnabled: true,
+            navigationDelegate: _handleNavigationInterceptor,
           ),
         ),
         Visibility(
@@ -136,6 +139,9 @@ class _BasqetWebviewState extends State<BasqetWebview> {
           widget.onError(
             bodyMap['data'],
           );
+          break;
+        case "checkout.abandoned":
+          widget.onAbandoned();
           break;
         default:
       }
