@@ -1,4 +1,7 @@
 # Flutter Basqet
+[![NPM version](https://img.shields.io/pub/v/flutter_basqet.svg)](https://pub.dev/packages/flutter_basqet)
+&nbsp;
+&nbsp;
 
 This package makes it easy to use the Basqet in your flutter project.
 
